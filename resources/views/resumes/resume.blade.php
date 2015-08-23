@@ -47,6 +47,7 @@
                     <ul>
                 @foreach($tasks as $task)
                         <li>{{ $task->task }}</li>
+                    <ul><li>{{ $task->task_description }}</li></ul>
                     @endforeach
                     </ul>
                  @endif
