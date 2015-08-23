@@ -43,7 +43,7 @@
                 <h3>{{ $job->job }}</h3>
                 <h5>{{ $job->job_position }}</h5>
             <p>{{ $job->job_description }}</p>
-                @if(count($tasks))
+                @if($tasks)
                     <ul>
                 @foreach($tasks as $task)
                         <li>{{ $task->task }}</li>

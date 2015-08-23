@@ -31,7 +31,7 @@ class ResumeController extends Controller
         $skills = Skill::where('user_id',$id)->get();
         $jobs = Job::where('user_id',$id)->get();
         $school = School::where('user_id',$id)->get();
-        $tasks = Task::where('id','1')->get();
+        $tasks = Task::where('job_id','1')->get();
         return view('resumes.resume', compact('skills','jobs','school','tasks','users'));
     }
     public function update($id)
