@@ -41,8 +41,21 @@
     </div>
 </form>
         </div>
-        <div class="col-lg-6">
+
+        <div class="col-lg-5">
            <h2>Start your Resume Today!</h2>
-            <p>Creating a username will allow you to create your own resume that will b hosted by this website.</p></div>
+            <p>Creating a username will allow you to create your own resume that will b hosted by this website.</p>
+        <h5>Benefits of Using Our Service</h5>
+        <ul>
+            <li>Save Time</li>
+            <li>Information Saved Security</li>
+            <ul>
+                <li>Never Lose your Resume</li>
+                <li>Easy to update from one location</li>
+                <li>Version Control</li>
+            </ul>
+            <li>Get prompted for needed information.</li>
+        </ul>
+        </div>
     </div>
 @stop

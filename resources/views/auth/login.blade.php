@@ -7,7 +7,7 @@
 @section('content')
     <img src='/images/image_top_spread.jpg' class="img-responsive" style="min-width: 100%;"></img>
     <div class="container">
-        <h2>Login to edit Resume</h2>
+        <h2>Login</h2>
         <div class="col-lg-6">
 <form method="POST" action="/auth/login" >
     {!! csrf_field() !!}
@@ -31,5 +31,8 @@
     </div>
 </form>
     </div>
+        <div class="col-lg-6">
+
+        </div>
     </div>
 @stop
