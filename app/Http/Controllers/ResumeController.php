@@ -41,7 +41,8 @@ class ResumeController extends Controller
         $skills = Skill::where('user_id',$id)->get();
         $jobs = Job::where('user_id',$id)->get();
         $school = School::where('user_id',$id)->get();
-        $tasks = Task::where('job_id','1')->get();
+        $jobIds = $jobs->id;
+        $tasks = Task::where('job_id',$jobIds)->get();
         return view('resumes.edit', compact('skills','jobs','school','tasks','users'));
 
     }

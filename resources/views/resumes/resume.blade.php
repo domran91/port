@@ -24,7 +24,7 @@
     </ul>
 </div>
     <div class="col-lg-8">
-        <h1>Education</h1>
+        <h3>Education</h3>
         @if(count($school))
 
                 @foreach($school as $school_obj)
@@ -36,7 +36,7 @@
 
         @endif
 
-        <h1>Jobs</h1>
+        <h3>Jobs</h3>
         @if(count($jobs))
 
                 @foreach($jobs as $job)
@@ -45,7 +45,7 @@
             <p>{{ $job->job_description }}</p>
                 @if($tasks)
                     <ul>
-                @foreach($tasks as $task)
+                @foreach($tasks->where('job_id', $job->job_id) as $task)
                         <li>{{ $task->task }}</li>
                     <ul><li>{{ $task->task_description }}</li></ul>
                     @endforeach
