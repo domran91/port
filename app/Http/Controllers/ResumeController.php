@@ -11,6 +11,7 @@ use App\Task;
 use App\School;
 use App\Job;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class ResumeController extends Controller
 {
@@ -37,12 +38,13 @@ class ResumeController extends Controller
     public function update($id)
 
     {
-        $users = User::findOrFail($id);
-        $skills = Skill::where('user_id',$id)->get();
-        $jobs = Job::where('user_id',$id)->get();
-        $school = School::where('user_id',$id)->get();
-        $jobIds = $jobs->id;
-        $tasks = Task::where('job_id',$jobIds)->get();
+        $userId = Auth::id();
+        $users = User::findOrFail($userId);
+        $skills = Skill::where('user_id',$userId)->get();
+        $jobs = Job::where('user_id',$userId)->get();
+        $school = School::where('user_id',$userId)->get();
+        //$jobIds = $jobs->id;
+        //$tasks = Task::where('job_id',$jobIds)->get();
         return view('resumes.edit', compact('skills','jobs','school','tasks','users'));
 
     }

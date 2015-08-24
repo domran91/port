@@ -40,14 +40,7 @@ class JobController extends Controller
     public function store(Requests\AddJobRequest $request)
     {
         $authid = Auth::id();
-        $job = new Job;
-        $job->job = $request['job'];
-        $job->job_position = $request['job_position'];
-        $job->started_on = $request['started_on'];
-        $job->ended_on = $request['ended_on'];
-        $job->job_description = $request['job_description'];
-        $job->user_id = Auth::id();
-        $job->save();
+        Auth::user()->jobs()->save(new Job($request->all()));
         $redirectUrl = 'resume/'.$authid.'/edit';
 
         Return redirect($redirectUrl);

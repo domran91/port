@@ -13,4 +13,10 @@ class Job extends Model
         'started_on',
         'ended_on',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
+
