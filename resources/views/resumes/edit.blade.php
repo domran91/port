@@ -8,7 +8,7 @@
 <div class="container">
     <div class="jumbotron">
         <h1>Resume Builder</h1>
-        <p>Currently you can only and and edit jobs.</p>
+        <p>Currently you can only add and edit jobs.</p>
     </div>
 <div class="col-lg-4">
 
