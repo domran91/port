@@ -22,6 +22,9 @@ Route::get('resume/{id}', 'ResumeController@show');
 //Route::get('jobs/add','JobController@create');
 //Route::post('jobs','JobController@store');
 Route::resource('jobs', 'JobController');
+Route::resource('schools','SchoolController');
+Route::resource('skills', 'SkillsController');
+Route::resource('task','taskController');
 
 Route::get('home', 'ResumeController@index');
 
