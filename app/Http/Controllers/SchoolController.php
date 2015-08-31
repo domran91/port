@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\School;
+
 
 class SchoolController extends Controller
 {
@@ -26,7 +29,8 @@ class SchoolController extends Controller
      */
     public function create()
     {
-        //
+        return view('schools.addSchool');
+
     }
 
     /**
@@ -37,7 +41,11 @@ class SchoolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $authid = Auth::id();
+        Auth::user()->schools()->save(new School($request->all()));
+        $redirectUrl = 'resume/'.$authid.'/edit';
+
+        Return redirect($redirectUrl);
     }
 
     /**
@@ -59,7 +67,8 @@ class SchoolController extends Controller
      */
     public function edit($id)
     {
-        //
+        $school = School::findOrFail($id);
+        return view('schools.edit', compact('school'));
     }
 
     /**
@@ -71,7 +80,11 @@ class SchoolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $authid = Auth::id();
+        $redirectUrl = 'resume/'.$authid.'/edit';
+        $job = School::findOrFail($id);
+        $job->update($request->all());
+        return redirect($redirectUrl);
     }
 
     /**

@@ -28,24 +28,15 @@ class ResumeController extends Controller
 
     public function show($id)
     {
-        $users = User::where('id',$id)->get();
-        $skills = Skill::where('user_id',$id)->get();
-        $jobs = Job::where('user_id',$id)->get();
-        $school = School::where('user_id',$id)->get();
-        $tasks = Task::where('job_id','1')->get();
-        return view('resumes.resume', compact('skills','jobs','school','tasks','users'));
+        $user = User::findOrFail($id);
+        return view('resumes.resume', compact('user'));
     }
-    public function update($id)
+    public function update()
 
     {
         $userId = Auth::id();
-        $users = User::findOrFail($userId);
-        $skills = Skill::where('user_id',$userId)->get();
-        $jobs = Job::where('user_id',$userId)->get();
-        $school = School::where('user_id',$userId)->get();
-        //$jobIds = $jobs->id;
-        //$tasks = Task::where('job_id',$jobIds)->get();
-        return view('resumes.edit', compact('skills','jobs','school','tasks','users'));
+        $user = User::findOrFail($userId);
+        return view('resumes.edit', compact('user'));
 
     }
 

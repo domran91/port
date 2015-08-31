@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Skill;
+use Illuminate\Support\Facades\Auth;
+
 
 class SkillsController extends Controller
 {
@@ -26,7 +29,7 @@ class SkillsController extends Controller
      */
     public function create()
     {
-        //
+        return view('skills.AddSkills');
     }
 
     /**
@@ -37,7 +40,11 @@ class SkillsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $authid = Auth::id();
+        Auth::user()->skills()->save(new Skill($request->all()));
+        $redirectUrl = 'resume/'.$authid.'/edit';
+
+        Return redirect($redirectUrl);
     }
 
     /**
@@ -59,7 +66,8 @@ class SkillsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $skill = Skill::findOrFail($id);
+        return view('skills.edit', compact('skill'));
     }
 
     /**
@@ -71,7 +79,11 @@ class SkillsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $authid = Auth::id();
+        $redirectUrl = 'resume/'.$authid.'/edit';
+        $skill = Skill::findOrFail($id);
+        $skill->update($request->all());
+        return redirect($redirectUrl);
     }
 
     /**

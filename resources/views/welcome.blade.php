@@ -16,7 +16,7 @@
         <div class="col-md-7">
             <h2 class="featurette-heading">Resume Creation. <span class="text-muted">Easy as answering a few questions.</span></h2>
             <p class="lead">
-                This website is created by Dominique Randolph for practice using Laravel + Bootstrap. So take a moment to create an account. Then take all your life experiences and achievements and add them to your profile. Then your resume is automaticly generated.
+                This website is created by Dominique Randolph for practice using Laravel + Bootstrap. So take a moment to create an account. Then take all your life experiences and achievements and add them to your profile. Then your resume is automatically generated.
             </p>
         </div>
         <div class="col-md-5">
@@ -29,7 +29,7 @@
     <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
             <h2 class="featurette-heading">Scope + MVC. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">You can visit the <b>Github</b> <a href="https://github.com/domran91/port">repository</a> to see all the code that was created. There are classes to handel each form of information and views to each page view.</p>
+            <p class="lead">You can visit the <b>Github</b> <a href="https://github.com/domran91/port">repository</a> to see all the code that was created. There are classes to handle each form of information and views to each page view.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
             <img class="featurette-image img-responsive center-block" src="/images/step_two.jpg" alt="Generic placeholder image">
