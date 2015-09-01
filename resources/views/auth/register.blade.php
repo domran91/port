@@ -44,7 +44,7 @@
 
         <div class="col-lg-5">
            <h2>Start your Resume Today!</h2>
-            <p>Creating a username will allow you to create your own resume that will b hosted by this website.</p>
+            <p>Creating a username will allow you to create your own resume that will be hosted by this website.</p>
         <h5>Benefits of Using Our Service</h5>
         <ul>
             <li>Save Time</li>

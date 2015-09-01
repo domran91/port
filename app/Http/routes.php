@@ -26,7 +26,7 @@ Route::resource('schools','SchoolController');
 Route::resource('skills', 'SkillsController');
 Route::resource('task','taskController');
 
-Route::get('home', 'ResumeController@index');
+Route::get('home', 'ResumeController@update');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
